@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>ВелКен</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=1060, user-scalable=yes">
+	<!--<link href="./favicon.ico" rel="shortcut icon">-->
+	<link href="./css/style.css" rel="stylesheet">
+	<link href="./css/adaptive.css" rel="stylesheet">
+	<script src="./js/jquery.js"></script>
+	<!--[if IE 8]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="./js/ie8.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="wrapper">
+		<header>
+			<div>
+				<p class="menu-open">Меню</p>
+				<img src="./img/logo-1.png" width="232" height="180" class="logo" alt="">
+				<ul class="nav">
+					<li>
+						<span><img src="./img/pin-icon.png" width="22" height="31" alt=""></span>
+						<a href="#">Где купить наши семечки</a>
+					</li>
+					<li>
+						<span><img src="./img/comment-icon.png" width="27" height="26" alt=""></span>
+						<a href="#">Обратная связь</a>
+					</li>
+				</ul>
+				<ul class="lang-e">
+					<li class="active"><a href="#">ru</a></li>
+					<li><a href="#">中國</a></li>
+					<li><a href="#">en</a></li>
+				</ul>
+				<div class="section">
+					<p>Вы находитесь в разделе</p>
+					<h5>Потребителям</h5>
+				</div>
+				<div class="menu-opened">
+					<ul>
+						<li><a href="#">Обращение директора</a></li>
+						<li><a href="#">Миссия и ценности</a></li>
+						<li><a href="#">История компании</a></li>
+						<li><a href="#">Новости / Акции</a></li>
+						<li><a href="#">Производство</a></li>
+						<li><a href="#">Продукт / Преимущества</a></li>
+						<li><a href="#">Вакансии</a></li>
+						<li><a href="#">Аттестация рабочих мест</a></li>
+						<li><a href="#">Наша жизнь</a></li>
+						<li><a href="#">Условия работы</a></li>
+					</ul>
+					<span class="close"></span>
+				</div>
+			</div>
+		</header>
+		<div class="geography-b">
+			<h1 class="title">Где купить продукцию Велкен?</h1>
+			<div id="map">
+				<script src="https://maps.googleapis.com/maps/api/js"></script>
+				<script>
+					function initialize() {
+						var mapCanvas = document.getElementById('map');
+						var mapOptions = {
+							center: new google.maps.LatLng(36, 15),
+							zoom: 3,
+							disableDefaultUI: true,
+							scrollwheel: false
+						}
+						var map = new google.maps.Map(mapCanvas, mapOptions);
+						var mainIcon = './img/pin-icon-2.png';
+						var place1 = new google.maps.LatLng(36, 15);
+						var marker1 = new google.maps.Marker({
+							position: place1,
+							map: map,
+							icon: mainIcon
+						});
+						$('.map-i').bind('click', function() {
+							map.set('scrollwheel', true);
+						});
+						$('.map-i').siblings().bind('click', function() {
+							map.set('scrollwheel', false);
+						});
+					}
+					google.maps.event.addDomListener(window, 'load', initialize);
+				</script>
+			</div>
+			<ul class="place">
+				<li>
+					<p>Выберите регион:</p>
+					<select>
+						<option>Алтайский край</option>
+						<option>Алтайский край</option>
+					<select>
+				</li>
+				<li>
+					<p>Выберите город:</p>
+					<select>
+						<option>Барнаул</option>
+						<option>Барнаул</option>
+					<select>
+				</li>
+			</ul>
+			<div class="partners">
+				<h2>Наши партнеры</h2>
+				<ul class="grid-e">
+					<li><div><img src="./pic/p-1.png" width="160" height="340" alt=""></div></li>
+					<li><div><img src="./pic/p-2.png" width="160" height="340" alt=""></div></li>
+					<li><div><img src="./pic/p-3.png" width="160" height="340" alt=""></div></li>
+					<li><div><img src="./pic/p-4.png" width="160" height="340" alt=""></div></li>
+					<li><div><img src="./pic/p-5.png" width="160" height="340" alt=""></div></li>
+					<li><div><img src="./pic/p-6.png" width="160" height="340" alt=""></div></li>
+					<li><div><img src="./pic/p-7.png" width="160" height="340" alt=""></div></li>
+					<li><div><img src="./pic/p-8.png" width="160" height="340" alt=""></div></li>
+					<li><div><img src="./pic/p-9.png" width="160" height="340" alt=""></div></li>
+					<li><div><img src="./pic/p-10.png" width="160" height="340" alt=""></div></li>
+					<li><div><img src="./pic/p-11.png" width="160" height="340" alt=""></div></li>
+					<li><div><img src="./pic/p-12.png" width="160" height="340" alt=""></div></li>
+					<li><div><img src="./pic/p-13.png" width="160" height="340" alt=""></div></li>
+					<li><div><img src="./pic/p-14.png" width="160" height="340" alt=""></div></li>
+					<li><div><img src="./pic/p-15.png" width="160" height="340" alt=""></div></li>
+					<li><div><img src="./pic/p-16.png" width="160" height="340" alt=""></div></li>
+					<li><div><img src="./pic/p-17.png" width="160" height="340" alt=""></div></li>
+					<li><div><img src="./pic/p-18.png" width="160" height="340" alt=""></div></li>
+					<li><div><img src="./pic/p-19.png" width="160" height="340" alt=""></div></li>
+					<li><div><img src="./pic/p-20.png" width="160" height="340" alt=""></div></li>
+				</ul>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<footer>
+		<div>
+			<ul class="nav type-1">
+				<li><a href="#">Обращение директора</a></li>  
+				<li><a href="#">Миссия и ценности</a></li>
+				<li><a href="#">История компании</a></li>
+				<li><a href="#">Новости/Акции</a></li>
+				<li><a href="#">Производство</a></li>
+				<li><a href="#">Продукт/Преимущества</a></li>
+			</ul>
+			<ul class="nav type-2">
+				<li><a href="#">Вакансии</a></li>
+				<li><a href="#">Аттестация рабочих мест</a></li>
+				<li><a href="#">Наша жизнь</a></li>
+				<li><a href="#">Условия работы</a></li>
+				<li><a href="#">Где купить наши семечки</a></li>
+				<li><a href="#">Обратная связь</a></li>
+			</ul>
+			<div class="enter">
+				<p>Вход для</p>
+				<h5><a href="#"><span>супервайзеров</span></a></h5>
+			</div>
+			<p class="author">Разработка сайта —  <img src="./img/letsrock-logo.png" width="89" height="20" alt=""></p>
+		</div>
+	</footer>
+	<script src="./js/dynamic.js"></script>
+</body>
+</html>
