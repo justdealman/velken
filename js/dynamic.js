@@ -150,4 +150,33 @@ $(function() {
 		e.preventDefault();
 		$('.menu-opened').stop().slideUp(300);
 	});
+	function slider() {
+		$('.slider .container').empty();
+		$('.slider .prev, .slider .next, .slider .pagination').remove();
+		$('.slider .container').html($('.slider .temp').html());
+		$('.slider, .slider .container, .slider .container > div').width($('.wrapper').width());
+		$('.slider').slides({
+			generatePagination: true,
+			generateNextPrev: true,
+			container: 'container',
+			effect: 'slide',
+			slideSpeed: 500,
+			play: 10000,
+			pause: 2500,
+		});
+	}
+	if ( $('.slider').length > 0 ) {
+		slider();
+		$('.slider').bind('swipeleft', function() {
+			$('.slider .next').trigger('click');
+		});
+		$('.slider').bind('swiperight', function() {
+			$('.slider .prev').trigger('click');
+		});
+	}
+	$(window).resize(function() {
+		if ( $('.slider').length > 0 ) {
+			slider();
+		}
+	});
 });
