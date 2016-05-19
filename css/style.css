@@ -1353,16 +1353,22 @@ footer .author img {
 	text-transform:uppercase;
 	margin:0;
 }
-
-.product-b .nav li img {
+.product-b .nav li > a {
+	overflow:hidden;
+	position:relative;
+	width:136px;
+	height:135px;
+	display:block;
+}
+.product-b .nav li > a img {
 	position:absolute;
-	top:0;
-	right:0;
-	bottom:0;
 	left:0;
-	max-width:136px;
-	max-height:135px;
-	margin:auto;
+	top:-135px;
+	transition:all 0.2s linear;
+	-webkit-transition:all 0.2s linear;
+}
+.product-b .nav li.active > a img, .product-b .nav li:hover > a img {
+	top:0;
 }
 .product-b > div {
 	overflow:hidden;
