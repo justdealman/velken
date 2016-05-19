@@ -179,4 +179,82 @@ $(function() {
 			slider();
 		}
 	});
+	if ( $('.prod-intro-2').length > 0 ) {
+		$('header').addClass('custom');
+	}
+	$('.prod-process-2 .media h6').on('mouseenter', function() {
+		$(this).siblings('div').stop().fadeIn(400);
+	});
+	$('.prod-process-2 .media').on('mouseleave', function() {
+		$(this).children('div').stop().fadeOut(400);
+	});
+	$('[data-open]').on('click', function(e) {
+		e.preventDefault();
+		var t = $('[data-target="'+$(this).attr('data-open')+'"]');
+		$('.fade').stop(true,true).fadeIn(400);
+		var h = $(window).scrollTop()+($(window).height()-t.outerHeight())/2;
+		if ( h < 0 ) {
+			h = 0;
+		}
+		t.css({
+			'top': h+'px'
+		}).stop(true,true).fadeIn(400);
+	});
+	$('.fade, [data-target] .modal .close').on('click', function(e) {
+		e.preventDefault();
+		$('.fade, [data-target]').stop(true,true).fadeOut(400);
+	});
+	$(window).on('scroll', function() {
+		$('.animated, .product-b .list li, .assortment-b .list > li .pic, .production-b .list li div, .about-p .group ul li img').each(function() {
+			if ( $(window).scrollTop() > $(this).offset().top-$(window).height() && !$(this).hasClass('complete') ) {
+				$(this).addClass('complete')
+			}
+		});
+		if ( $('.shipment-e .car').length > 0 ) {
+			if ( $(window).scrollTop() > $('.shipment-e .car').offset().top-$(window).height()+285 && !$('.shipment-e .car').hasClass('complete') ) {
+				$('.shipment-e .car').animate({
+					'left': $('.shipment-e .info').offset().left+505-$('.shipment-e .car').width()+'px'
+				}, 5100);
+				$('.shipment-e .car').addClass('complete');
+			}
+		}
+	});
+	$(window).trigger('scroll');
+	$('.gallery-b .big div').on('mouseenter', function() {
+		var t = $(this);
+		t.stop().animate({
+			'top': '-10px'
+		}, 500, 'easeOutCubic', function() {
+			t.stop().animate({
+				'top': '0'
+			}, 500, 'easeOutBounce');
+		});
+	});
+	$('.text-b .gallery ul li').on('mouseenter', function() {
+		var t = $('.text-b .gallery div');
+		t.stop().fadeIn(500);
+		t.find('img').attr('src',$(this).attr('data-full'));
+	});
+	$('.text-b .gallery ul li').on('mouseleave', function() {
+		var t = $('.text-b .gallery div');
+		t.stop().fadeOut(500);
+	});
+	var newsMain = $('.news-modal .main');
+	var api;
+	$('[data-open="news"]').on('click', function() {
+		$('.news-modal .preview, .news-modal .main').height($('.news-modal').height());
+		$('.news-modal .preview').jScrollPane();
+		newsMain.jScrollPane();
+		api = newsMain.data('jsp');
+		$('.news-modal .preview li:nth-child('+$(this).attr('href')+')').trigger('click');
+	});
+	$('.news-modal .preview li').on('click', function() {
+		$(this).addClass('active').siblings().removeClass('active');
+		$('.news-modal .main .core').empty();
+		$('.news-modal .main .core').html($(this).find('.core').html());
+		api.reinitialise();
+	});
+	$('.news-modal .main').delegate('.close', 'click', function() {
+		$('.fade, [data-target]').stop(true,true).fadeOut(400);
+	});
 });
