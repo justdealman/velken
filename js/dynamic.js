@@ -210,7 +210,7 @@ $(function() {
 			'top': h+'px'
 		}).stop(true,true).fadeIn(400);
 	});
-	$('.fade, [data-target], .modal .close').on('click', function(e) {
+	$('.fade, .modal .close').on('click', function(e) {
 		e.preventDefault();
 		$('.fade, [data-target]').stop(true,true).fadeOut(400);
 	});
