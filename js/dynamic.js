@@ -184,6 +184,16 @@ $(function() {
 	}
 	$('.prod-process-2 .media h6').on('mouseenter', function() {
 		$(this).siblings('div').stop().fadeIn(400);
+		var video = $(this).parent().find('video');
+		if ( video.length > 0 ) {
+			video.get(0).play();
+			var w = video.attr('width')/video.attr('height')*273;
+			video.css({
+				'width': w+'px',
+				'height': '273px',
+				'margin-left': -(w-273)/2+'px'
+			});
+		}
 	});
 	$('.prod-process-2 .media').on('mouseleave', function() {
 		$(this).children('div').stop().fadeOut(400);

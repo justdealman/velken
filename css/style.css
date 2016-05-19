@@ -3124,6 +3124,7 @@ h1.title:after {
 	line-height:20px;
 	font-weight:300;
 	padding:7px 0;
+	page-break-inside:avoid;
 }
 .menu-opened ul li a {
 	position:relative;
@@ -3851,6 +3852,11 @@ h6.more a:hover span {
 }
 .prod-process-2 {
 	position:relative;
+	height:2790px;
+	background:url('../img/process-fixed.jpg') no-repeat center center fixed;
+	background-size:cover;
+	-webkit-box-shadow:border-box;
+	box-sizing:border-box;
 }
 .prod-process-2 .big {
 	position:absolute;
@@ -3868,7 +3874,7 @@ h6.more a:hover span {
 	position:relative;
 	padding:208px 0 77px;
 }
-.prod-process-2 .core:before {
+/*.prod-process-2 .core:before {
 	content:'';
 	position:absolute;
 	right:50%;
@@ -3878,7 +3884,7 @@ h6.more a:hover span {
 	height:808px;
 	margin-right:-960px;
 	background:url('../img/prod-process-2-before.png') no-repeat right top;
-}
+}*/
 .prod-process-2 .core i.img-1 {
 	position:absolute;
 	left:50%;
@@ -3918,7 +3924,7 @@ h6.more a:hover span {
 	z-index:2;
 	margin-left:-960px;
 }
-.prod-process-2 .core:after {
+/*.prod-process-2 .core:after {
 	content:'';
 	position:absolute;
 	left:0;
@@ -3926,6 +3932,15 @@ h6.more a:hover span {
 	width:100%;
 	height:530px;
 	background:url('../img/dark-bg.png') repeat-x center;
+}*/
+.prod-process-2 .core:after {
+	content:'';
+	position:absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	background:url('../img/process-bg.png') no-repeat center top;
 }
 .prod-process-2 h5 {
 	position:relative;
@@ -4080,7 +4095,7 @@ h6.more a:hover span {
 	-webkit-border-radius:50%;
 	border-radius:50%;
 }
-.prod-process-2 .media div img, .prod-process-2 .media div video {
+.prod-process-2 .media div img {
 	width:273px;
 	height:273px;
 }
