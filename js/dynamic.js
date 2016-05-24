@@ -87,6 +87,24 @@ $(function() {
 	if ( $('.product-b .rc').length > 0 ) {
 		productIntro();
 	}
+	if ( $('.steps-i').length > 0 ) {
+		$('.steps-i ul li').width($('.steps-i').width()/3);
+		$('.steps-i .prev').hide();
+		$('.steps-i .next').on('click', function() {
+			$(this).siblings('ul').stop().animate({
+				'margin-left': -$(this).siblings('ul').find('li').outerWidth()-2+'px'
+			}, 500);
+			$(this).stop().fadeOut(500);
+			$(this).siblings('.prev').stop().fadeIn(500);
+		});
+		$('.steps-i .prev').on('click', function() {
+			$(this).siblings('ul').stop().animate({
+				'margin-left': 0
+			}, 500);
+			$(this).stop().fadeOut(500);
+			$(this).siblings('.next').stop().fadeIn(500);
+		});
+	}
 	$(window).resize(function() {
 		if ( $('.index').length > 0 ) {
 			zoomIndex();
@@ -102,6 +120,9 @@ $(function() {
 		}
 		if ( $('.product-b .rc').length > 0 ) {
 			productIntro();
+		}
+		if ( $('.steps-i').length > 0 ) {
+			$('.steps-i ul li').width($('.steps-i').width()/3);
 		}
 	});
 	$(window).load(function() {
@@ -145,10 +166,28 @@ $(function() {
 		} else {
 			$('.menu-opened').stop().slideUp(300);
 		}
+		$('.section-drop').stop().slideUp(300);
+		$('header .section h5').removeClass('opened');
 	});
 	$('.menu-opened .close').on('click', function(e) {
 		e.preventDefault();
 		$('.menu-opened').stop().slideUp(300);
+	});
+	$('header .section h5').on('click', function(e) {
+		e.preventDefault();
+		if ( !$(this).hasClass('opened') ) {
+			$(this).addClass('opened');
+		} else {
+			$(this).removeClass('opened');
+		}
+		$('.section-drop').stop().slideToggle(300);
+	});
+	$('html').on('click', function() {
+		$('.section-drop').stop().slideUp(300);
+		$('header .section h5').removeClass('opened');
+	});
+	$('header .section h5, .section-drop').on('click', function(e) {
+		e.stopPropagation();
 	});
 	function slider() {
 		$('.slider .container').empty();

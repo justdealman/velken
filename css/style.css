@@ -983,22 +983,65 @@ header .section h5 {
 	text-decoration:underline;
 }
 .steps-i {
-	clear:both;
 	overflow:hidden;
+	position:relative;
+	min-height:900px;
+	margin:0;
+}
+.steps-i .prev, .steps-i .next {
+	position:absolute;
+	bottom:38px;
+	z-index:5;
+	color:#ffffff;
+	font-size:30px;
+	line-height:40px;
+	font-family:'Helios Condensed', sans-serif;
+	cursor:pointer;
+	padding:27px 47px 25px;
+	margin:0;
+	background:rgb(0,0,0);
+	background:rgba(0,0,0,0.5);
+}
+.steps-i .prev span, .steps-i .next span {
+	border-bottom:2px solid rgba(255,255,255,0.5);
+}
+.steps-i .prev:hover span, .steps-i .next:hover span {
+	border-bottom-color:transparent;
+}
+.steps-i .prev {
+	left:0;
+}
+.steps-i .next {
+	right:0;
+}
+.steps-i .prev:before {
+	content:url('../img/prev-arrow.png');
+	display:inline-block;
+	vertical-align:top;
+	margin:-6px 28px 0 2px;
+}
+.steps-i .next:after {
+	content:url('../img/next-arrow.png');
+	display:inline-block;
+	vertical-align:top;
+	margin:-6px 2px 0 28px;
+}
+.steps-i ul {
+	position:relative;
+	white-space:nowrap;
 	margin:0;
 }
 .steps-i li {
 	position:relative;
-	float:left;
+	display:inline-block;
 	width:33.33%;
 	min-height:900px;
+	vertical-align:top;
+	white-space:normal;
 	padding:48px 0 30px 0;
-	margin:0 1px 0 0;
+	margin:0 -2px 0 0;
 	-webkit-box-shadow:border-box;
 	box-sizing:border-box;
-}
-.steps-i li:nth-child(3n) {
-	margin-right:-10px;
 }
 .steps-i li:before {
 	content:'';
@@ -4518,4 +4561,43 @@ h6.more a:hover span {
 	background:#eeeef4;
 	float:left;
 	height:100%;
+}
+header .section-drop {
+	position:absolute;
+	right:-34px;
+	top:126px;
+	display:none;
+	z-index:50;
+	width:176px;
+	padding:7px 27px 14px 33px;
+	margin:0;
+	background:#c0d131;
+}
+header .section-drop li {
+	font-size:18px;
+	line-height:20px;
+}
+header .section-drop li a {
+	display:block;
+	color:#ffffff;
+	padding:13px 20px 12px 21px;
+	border-top:1px solid #d3df6f;
+}
+header .section-drop li:first-child a {
+	border-top-width:0;
+}
+header .section-drop li a:hover {
+	text-decoration:underline;
+}
+header .section h5.opened {
+	position:relative;
+	color:#ffffff;
+	font-size:18px;
+	line-height:22px;
+	font-weight:300;
+	text-transform:uppercase;
+	cursor:pointer;
+	padding:0 23px 0 0;
+	margin:0 0 7px;
+	background-position:right -14px;
 }
